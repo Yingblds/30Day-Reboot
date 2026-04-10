@@ -23,39 +23,57 @@ This project simulates a real-world business scenario where data analysis suppor
 
 ## Data Description
 
-- Source: 
+- Source:
+The dataset used in this project is the Online Retail II dataset, publicly available on platforms such as Kaggle and the UCI Machine Learning Repository.
+It contains transactional data for a UK-based online retail store.
+This dataset is widely used for customer segmentation, cohort analysis, and retail analytics tasks.
 - Format: CSV
 - Key Features:
-  ・Order 
+  · Invoice
+  · StockCode
+  · Description
+  · Quantity
+  · InvoiceDate
+  · Price
+  · Customer ID
+  · Country
 - Size:
-  ・ Number of rows:
-  ・ Time range:
+  · Number of rows: 
+  Before cleaning: 541,910 rows
+  After cleaning (removing missing Customer IDs and returns): 531,286 rows
+  · Time range:
+  The dataset covers transactions from December 1, 2010 to December 9, 2011
 
-## Tool
+## Data Cleaning
 
-- Python
-- Pandas
-- Seaborn
-- Matplotlib
-- Jupyter Notebook
+· Removed missing Customer IDs
+· Filtered out negative quantities (returns)
+· Create TotalPrice = Quantity * Price
+· Converted date fields to proper datetime format
 
-## Methodology
+## Analysis Performed
 
-1. * Data Cleaning
-   - Handling missing values
-   - Data type conversion
-   - Removing duplicates
-2. * Exploratory Data Analysis (EDA)
-   - Sales trends over time
-   - Distribution analysis
-   - Categorty-level insights
-3. * Visualization
-   - Line charts for trends
-   - Bar charts for comparisons
-   - Heatmaps
-4. * Insights Generation
-   - Key findings
-   - Business implications
+1. Sales Trend Analysis
+· Monthly aggregation of total revenue
+· Identified overall growth pattern and seasonality
+2. Moving Average
+· Applied 3-month rolling average
+· Smoothed fluctuations to reveal underlying trends
+3. Growth Rate Analysis
+· Calculated month-over-month growth
+· Identified volatility and peak performance periods
+4. Top Customers & Countries
+· Ranked top-performing customers and regions
+· Observed strong revenue concentration
+5. RFM Alalysis (Customer Segmentation)
+· Recency: Days since last purchase
+· Frequency: Number of purchases
+· Monetary: Total spending
+· Segmented customers into behavioral groups
+6. Cohort Analysis (Customer Retention)
+· Grouped customers by first purchase month
+· Calculated retention rates over time
+· Visualized retention patterns using heatmap
 
 ## Notebook
 
@@ -68,16 +86,33 @@ This project simulates a real-world business scenario where data analysis suppor
 
 ## Key Insights
 
+· Sales show an overall upward trend but with significant volatility
+· Growth is inconsistent and likely influenced by seasonal or promotional factors
+· A small segment of customers contributes a large portion of revenue (Pareto effect)
+· Customer retention drops sharply after the first purchase
+· Long-term engagement is driven by a relatively small group of loyal customers
 
-## Conclusion
+## Business Recommendations
 
+· Improve early-stage customer retention (first-month experience)
+· Identify and replicate drivers behind peak sales periods
+· Focus on retaining high-value customers
+· Develop targeted re-engagement strategies for ar-risk users
 
+## Tool
 
-## Next Steps
+- Python
+- Pandas
+- Seaborn
+- Matplotlib
+- Jupyter Notebook
 
-- Build an interactive dashboard (Tableau)
-- Perform deeper customer segmentation
-- Apply predictive analysis (sales forecasting)
+## Future Improvements
+
+- Add predictive modeling (e.g., churn prediction)
+- Perform time series forecasting
+- Incorporate customer lifetime value (CLV) analysis
+- Build interactive dashboard (Tableau/Power BI)
 
 ## Author
 
