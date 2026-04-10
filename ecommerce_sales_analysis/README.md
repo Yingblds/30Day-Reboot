@@ -27,7 +27,7 @@ This project simulates a real-world business scenario where data analysis suppor
 The dataset used in this project is the Online Retail II dataset, publicly available on platforms such as Kaggle and the UCI Machine Learning Repository.
 It contains transactional data for a UK-based online retail store.
 This dataset is widely used for customer segmentation, cohort analysis, and retail analytics tasks.
-- Format: CSV
+- Format: xlsx
 - Key Features:
   · Invoice
   · StockCode
